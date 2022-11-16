@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Rocket_Elevators_Rest_API.Models;
 
-
 namespace Rocket_Elevators_Rest_API.Controllers
 {
     [Route("api/[controller]")]
@@ -25,21 +24,28 @@ namespace Rocket_Elevators_Rest_API.Controllers
 
         // GET api/Batteries/id
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<ActionResult<Battery>> Get(int id)
         {
-            return "value";
+            var battery = await _context.batteries.FindAsync(id);
+            if(battery == null) return NotFound();
+            return battery;
         }
 
-        // POST api/<BatteriesController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        // PUT api/batteries/id/status/status
+        [HttpPut("{id}/status/{status}")]
+        public async Task<ActionResult<Battery>> Put(int id, string status)
         {
-        }
+            // grab battery with id id
+            var battery = await _context.batteries.FindAsync(id);
+            
+            if(battery == null) {
+                return NotFound();
+            }
+            // change status of battery
+            battery.status = status;
+            _context.SaveChanges();
 
-        // PUT api/<BatteriesController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
+            return battery;
         }
 
         // DELETE api/<BatteriesController>/5
