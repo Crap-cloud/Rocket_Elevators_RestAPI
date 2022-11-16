@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Rocket_Elevators_Rest_API.props" />
+</Project>

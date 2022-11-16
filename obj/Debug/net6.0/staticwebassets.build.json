@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "3hjUVzjnzw2ta3oCSLqU8tAKfTZHtKzlZ6I9JPBGklk=",
-  "Source": "TodoApi",
-  "BasePath": "_content/TodoApi",
+  "Hash": "VJYy1zZUpVnlA16vB6GPnosExdMDPNA2bYxzOZOd3Kg=",
+  "Source": "Rocket_Elevators_Rest_API",
+  "BasePath": "_content/Rocket_Elevators_Rest_API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
