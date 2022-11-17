@@ -6,50 +6,50 @@ namespace Rocket_Elevators_Rest_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ColumnController : ControllerBase
+    public class ColumnsController : ControllerBase
     {
         private readonly RocketElevatorsContext _context;
 
-        public ColumnController(RocketElevatorsContext context)
+        public ColumnsController(RocketElevatorsContext context)
         {
             _context = context;
         }
 
-        // GET: api/<Column>
+        // GET: api/<Columns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Column>>> GetColumn()
+        public async Task<ActionResult<IEnumerable<Columns>>> GetColumns()
         {
-            return await _context.column.ToListAsync();
+            return await _context.columns.ToListAsync();
         }
 
-        // GET api/Column/id
+        // GET api/Columns/id
         [HttpGet("{id}")]
-        public async Task<ActionResult<Column>> Get(int id)
+        public async Task<ActionResult<Columns>> Get(int id)
         {
-            var column = await _context.column.FindAsync(id);
+            var column = await _context.columns.FindAsync(id);
             if (column == null) return NotFound();
             return column;
         }
 
-        // PUT api/column/id/status/status
+        // PUT api/columns/id/status/status
         [HttpPut("{id}/status/{status}")]
-        public async Task<ActionResult<Column>> Put(int id, string status)
+        public async Task<ActionResult<Columns>> Put(int id, string status)
         {
-            // grab column with id id
-            var column = await _context.column.FindAsync(id);
+            // grab columns with id id
+            var column = await _context.columns.FindAsync(id);
 
             if (column == null)
             {
                 return NotFound();
             }
-            // change status of column
+            // change status of columns
             column.status = status;
             _context.SaveChanges();
 
             return column;
         }
 
-        // DELETE api/<ColumnController>/5
+        // DELETE api/<ColumnsController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

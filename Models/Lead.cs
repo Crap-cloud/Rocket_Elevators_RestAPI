@@ -11,14 +11,14 @@ namespace Rocket_Elevators_Rest_API.Models
 
         [Key]
         public long id { get; set; }
-        public string contactName { get; set; }
-        public string contactBusinessName { get; set; }
-        public string contactEmail { get; set; }
-        public string contactPhone { get; set; }
-        public string projectName { get; set; }
-        public string projectDescription { get; set; }
-        public string contactDepartement { get; set; }
-        public string message { get; set; }
+        public string? contactName { get; set; }
+        public string? contactBusinessName { get; set; }
+        public string? contactEmail { get; set; }
+        public string? contactPhone { get; set; }
+        public string? projectName { get; set; }
+        public string? projectDescription { get; set; }
+        public string? contactDepartement { get; set; }
+        public string? message { get; set; }
         public DateOnly contactDate { get; set; }
         public DateTime created_at { get; set; }
         public DateTime updated_at { get; set; }
