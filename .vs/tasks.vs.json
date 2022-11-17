@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Controllers",
+      "appliesTo": "Controllers/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-Controllers",
+      "appliesTo": "Controllers/",
+      "type": "launch"
+    }
+  ]
+}
