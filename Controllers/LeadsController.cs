@@ -47,6 +47,16 @@ namespace Rocket_Elevators_Rest_API.Controllers
         {
             DateTime days = DateTime.Now.AddDays(-30);
             DateTime today = DateTime.Now;
+            //string sqlFormattedDate = created_at.ToString("yyyy-MM-dd HH:mm:ss.fff"); 
+
+            Console.WriteLine(days);
+            Console.WriteLine("=======================================================================");
+            Console.WriteLine(today);
+            Console.WriteLine(today - days);
+            Console.WriteLine("=======================================================================");
+            //Console.WriteLine(lead.created_at);
+
+
             bool bol = true;
             var customer = await _context.customers.ToListAsync();
             List<string> customerEmail = new List<string>();
@@ -54,7 +64,7 @@ namespace Rocket_Elevators_Rest_API.Controllers
             {
                 customerEmail.Add(customer[i].EmailCompanyContact);
             }
-            var lead = _context.leads.Where(l =>  (bol != customerEmail.Contains(l.contactEmail)));
+            var lead = _context.leads.Where(l =>  (bol != customerEmail.Contains(l.contactEmail)) && (today - l.created_at < today - days));
             if (lead == null)
             {
                 return NotFound();
