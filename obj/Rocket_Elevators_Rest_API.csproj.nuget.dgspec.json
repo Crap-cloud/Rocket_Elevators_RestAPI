@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Michael\\OneDrive\\Bureau\\Rocket_Elevators_RestAPI\\Rocket_Elevators_Rest_API.csproj": {}
+    "/Users/yannilapoyade/Documents/Documents - Yanni’s MacBook Pro/Rocket_Elevators_RestAPI/Rocket_Elevators_Rest_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Michael\\OneDrive\\Bureau\\Rocket_Elevators_RestAPI\\Rocket_Elevators_Rest_API.csproj": {
+    "/Users/yannilapoyade/Documents/Documents - Yanni’s MacBook Pro/Rocket_Elevators_RestAPI/Rocket_Elevators_Rest_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Michael\\OneDrive\\Bureau\\Rocket_Elevators_RestAPI\\Rocket_Elevators_Rest_API.csproj",
+        "projectUniqueName": "/Users/yannilapoyade/Documents/Documents - Yanni’s MacBook Pro/Rocket_Elevators_RestAPI/Rocket_Elevators_Rest_API.csproj",
         "projectName": "Rocket_Elevators_Rest_API",
-        "projectPath": "C:\\Users\\Michael\\OneDrive\\Bureau\\Rocket_Elevators_RestAPI\\Rocket_Elevators_Rest_API.csproj",
-        "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Michael\\OneDrive\\Bureau\\Rocket_Elevators_RestAPI\\obj\\",
+        "projectPath": "/Users/yannilapoyade/Documents/Documents - Yanni’s MacBook Pro/Rocket_Elevators_RestAPI/Rocket_Elevators_Rest_API.csproj",
+        "packagesPath": "/Users/yannilapoyade/.nuget/packages/",
+        "outputPath": "/Users/yannilapoyade/Documents/Documents - Yanni’s MacBook Pro/Rocket_Elevators_RestAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/yannilapoyade/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -38,6 +38,28 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp.Workspaces": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql.Design": {
               "target": "Package",
               "version": "[1.1.2, )"
@@ -49,6 +71,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
@@ -70,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }
