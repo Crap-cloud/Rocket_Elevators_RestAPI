@@ -44,20 +44,10 @@ namespace Rocket_Elevators_Rest_API.Controllers
 
         // PUT: api/Elevators/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}/status/{status}")]
-        public async Task<ActionResult<Elevator>> Put(int id, string elevator_status)
+        [HttpGet("status")]
+         public async Task<ActionResult<IEnumerable<Elevator>>> GetElevatorStat()
         {
-            // grab elevator with id id
-            var elevator = await _context.elevators.FindAsync(id);
-            
-            if(elevator == null) {
-                return NotFound();
-            }
-            // change status of battery
-            elevator.elevator_status = elevator_status;
-            _context.SaveChanges();
-
-            return elevator;
+            return await _context.elevators.Where(e=>(e.elevator_status == "Inactive")).ToListAsync();
         }
 
         // DELETE: api/Elevators/5
