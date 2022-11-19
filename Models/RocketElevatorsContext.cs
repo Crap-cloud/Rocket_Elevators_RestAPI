@@ -14,6 +14,7 @@ namespace Rocket_Elevators_Rest_API.Models
         public DbSet<Elevator> elevators { get; set; } = null!;
         public DbSet<Lead> leads { get; set; } = null!;
         public DbSet<Customer> customers { get; set; } = null!;
+        public DbSet<Building> buildings { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -37,9 +38,6 @@ namespace Rocket_Elevators_Rest_API.Models
                 entity.Property(e => e.created_at)
                     .HasColumnType("datetime")
                     .HasColumnName("created_at");
-                // entity.Property(e => e.Date)
-                //     .HasColumnType("datetime")
-                //     .HasColumnName("date");
                 entity.Property(e => e.contactDepartement)
                     .HasMaxLength(255)
                     .HasColumnName("contactDepartement");

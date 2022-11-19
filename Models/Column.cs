@@ -12,6 +12,8 @@ namespace Rocket_Elevators_Rest_API.Models
         [Key]
         public int id { get; set; }
         public string? status { get; set; }
+        public int battery_id { get; set; }
+
 
     }
 }
