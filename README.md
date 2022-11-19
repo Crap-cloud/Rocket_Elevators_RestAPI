@@ -22,7 +22,7 @@ To check our databases and tables on the terminal you can go on the sql console 
 To display databases type `SHOW DATABASES;`, and `USE <database_name>;` and now you just need to display the table you want with : `DESCRIBE <table_name>`.
 
 Here is an example :
-![alt text](https://github.com/mlouellette/Rocket_Elevators_Information_System/blob/main/image.png?raw=true)
+![alt text](https://github.com/Crap-cloud/Rocket_Elevators_RestAPI/blob/main/image.pngraw=true)
 
 To experiment our API's endpoint you can run `dotnet run` and in your browser or in postamn try some of these addresses :
 * `https://localhost:7235/api/batteries`to retrieve batteries status
