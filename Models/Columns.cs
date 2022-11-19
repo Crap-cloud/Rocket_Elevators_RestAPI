@@ -8,7 +8,7 @@ namespace Rocket_Elevators_Rest_API.Models
     public class Columns
     {
         [Key]
-        public long id { get; set; }
+        public int id { get; set; }
         public long battery_id { get; set; }
         public string? column_type { get; set; }
         public int served_floors_nb { get; set; }

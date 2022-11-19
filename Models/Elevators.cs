@@ -10,7 +10,7 @@ namespace Rocket_Elevators_Rest_API.Models
 
 
         [Key]
-        public long id { get; set; }
+        public int id { get; set; }
         public long column_id { get; set; }
         public int serial_nb { get; set; }
         public string? model { get; set; }
