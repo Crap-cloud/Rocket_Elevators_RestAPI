@@ -42,7 +42,22 @@ namespace Rocket_Elevators_Rest_API.Controllers
             return elevator;
         }
 
-        // PUT: api/Elevators/5
+        [HttpPut("{id}/status/{status}")]
+        public async Task<ActionResult<Elevator>> Put(int id, string status)
+        {
+            // grab battery with id id
+            var elevator = await _context.elevators.FindAsync(id);
+            
+            if(elevator == null) {
+                return NotFound();
+            }
+            // change status of battery
+            elevator.status = status;
+            _context.SaveChanges();
+
+            return elevator;
+        }
+
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpGet("status")]
          public async Task<ActionResult<IEnumerable<Elevator>>> GetElevatorStat()
