@@ -31,11 +31,11 @@ To experiment our API's endpoint you can run `dotnet run` and in your browser or
 * `https://localhost:7235/api/buildings/intervention` retrieving a list of Buildings that contain at least one battery, column or elevator requiring intervention
 * `https://localhost:7235/api/leads/pastdays` retrieving a list of Leads created in the last 30 days who have not yet become customers
 
-(If you have no result it could be possible that in your database you are not meet the conditions)
+(If you have no result it could be possible that in your database you are not meeting the conditions)
 
 # Video's Link
 
-
+https://www.youtube.com/watch?v=3ajNUDaZ4q0&ab_channel=MichaelOuellette
 
 
 
