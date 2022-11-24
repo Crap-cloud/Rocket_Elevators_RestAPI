@@ -52,7 +52,7 @@ namespace Rocket_Elevators_Rest_API.Controllers
             if(column == null) {
                 return NotFound();
             }
-            // change status of battery
+            // change status of column
             column.status = status;
             _context.SaveChanges();
 

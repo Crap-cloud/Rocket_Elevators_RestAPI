@@ -15,12 +15,13 @@ namespace Rocket_Elevators_Rest_API.Models
         public DbSet<Lead> leads { get; set; } = null!;
         public DbSet<Customer> customers { get; set; } = null!;
         public DbSet<Building> buildings { get; set; } = null!;
+        public DbSet<Intervention> interventions { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=ls-f2d6bd226744c0fcfc2009d804298a21ce412d05.crydppxblqbm.ca-central-1.rds.amazonaws.com;port=3306;database=myapp_development;uid=hello;password=Iloverails1!", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.29-mysql"));
+                optionsBuilder.UseMySql("server=localhost;port=3306;database=rocketElevatorGroupWebsite_development;uid=root;password=password", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.29-mysql"));
             }
         }
 
