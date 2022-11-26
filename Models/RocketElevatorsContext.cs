@@ -15,6 +15,7 @@ namespace Rocket_Elevators_Rest_API.Models
         public DbSet<Lead> leads { get; set; } = null!;
         public DbSet<Customer> customers { get; set; } = null!;
         public DbSet<Building> buildings { get; set; } = null!;
+        public DbSet<Intervention> interventions { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

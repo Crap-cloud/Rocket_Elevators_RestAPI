@@ -10670,11 +10670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/yannilapoyade/Documents/Documents - Yanni’s MacBook Pro/Rocket_Elevators_RestAPI/Rocket_Elevators_Rest_API.csproj",
+      "projectUniqueName": "/Users/yannilapoyade/Documents/Rocket_Elevators_RestAPI/Rocket_Elevators_Rest_API.csproj",
       "projectName": "Rocket_Elevators_Rest_API",
-      "projectPath": "/Users/yannilapoyade/Documents/Documents - Yanni’s MacBook Pro/Rocket_Elevators_RestAPI/Rocket_Elevators_Rest_API.csproj",
+      "projectPath": "/Users/yannilapoyade/Documents/Rocket_Elevators_RestAPI/Rocket_Elevators_Rest_API.csproj",
       "packagesPath": "/Users/yannilapoyade/.nuget/packages/",
-      "outputPath": "/Users/yannilapoyade/Documents/Documents - Yanni’s MacBook Pro/Rocket_Elevators_RestAPI/obj/",
+      "outputPath": "/Users/yannilapoyade/Documents/Rocket_Elevators_RestAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/yannilapoyade/.nuget/NuGet/NuGet.Config"

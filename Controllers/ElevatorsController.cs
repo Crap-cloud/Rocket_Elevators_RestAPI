@@ -52,7 +52,7 @@ namespace Rocket_Elevators_Rest_API.Controllers
                 return NotFound();
             }
             // change status of battery
-            elevator.status = status;
+            elevator.elevator_status = status;
             _context.SaveChanges();
 
             return elevator;

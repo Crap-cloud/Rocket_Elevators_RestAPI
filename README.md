@@ -25,13 +25,11 @@ Here is an example :
 ![alt text](https://github.com/Crap-cloud/Rocket_Elevators_RestAPI/blob/main/image.pngraw=true)
 
 To experiment our API's endpoint you can run `dotnet run` and in your browser or in postamn try some of these addresses :
-* `https://localhost:7235/api/batteries`to retrieve batteries status
-* `https://localhost:7235/api/batteries/1/status/Inactive` to change the status to 'Inactive' of the battery with id = 1 
-* `https://localhost:7235/api/elevators/status` retrieving a list of Elevators that are not in operation at the time of the request (so equal to 'Inactive')
-* `https://localhost:7235/api/buildings/intervention` retrieving a list of Buildings that contain at least one battery, column or elevator requiring intervention
-* `https://localhost:7235/api/leads/pastdays` retrieving a list of Leads created in the last 30 days who have not yet become customers
+* `https://localhost:7235/api/interventions/pending`to retrieve all intervention that do not have a start date and are in "Pending" status.
+* `https://localhost:7235/api/interventions/1/status/inProgress` to change the status of the intervention request to "InProgress" and add a start date and time
+* `https://localhost:7235/api/interventions/1/status/Completed` to change the status of the request for action to "Completed" and add an end date and time 
 
-(If you have no result it could be possible that in your database you are not meeting the conditions)
+(If you have no result it could be possible that in your database you have no intervention)
 
 # Video's Link
 
