@@ -33,7 +33,6 @@ To experiment our API's endpoint you can run `dotnet run` and in your browser or
 
 # Video's Link
 
-https://www.youtube.com/watch?v=3ajNUDaZ4q0&ab_channel=MichaelOuellette
-
+Video : https://youtu.be/8UNmEqDcL80
 
 
