@@ -20,7 +20,6 @@ namespace Rocket_Elevators_Rest_API.Controllers
             _context = context;
         }
 
-        // GET: api/<Interventions>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Intervention>>> GetInterventions()
         {
