@@ -1,62 +1,89 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Rocket_Elevators_Rest_API.Models;
+using RocketApi.Models;
 
-namespace Rocket_Elevators_Rest_API.Controllers
+namespace InterventionApi.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+
+public class InterventionController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class InterventionsController : ControllerBase
+    private readonly RocketElevatorContext _context;
+
+    public InterventionController(RocketElevatorContext context)
     {
-        private readonly RocketElevatorsContext _context;
+        _context = context;
+    }
 
-        public InterventionsController(RocketElevatorsContext context)
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Intervention>>> GetInterventionItems()
+    {
+        return await _context.interventions.ToListAsync();
+    }
+
+    private IActionResult View()
+    {
+        throw new NotImplementedException();
+    }
+
+    // GET: api/Elevator/5
+    [HttpGet("status")]
+    public async Task<ActionResult<IEnumerable<Intervention>>> GetInterventionStat()
+    {
+        return await _context.interventions.Where(e => (e.Status == "Pending")).ToListAsync();
         {
-            _context = context;
+
+        };
+    }
+
+    [HttpPut("{id}/InProgress")]
+    public async Task<ActionResult<Intervention>> UpdateInterventionStatus([FromRoute] int id)
+    {
+        var Intervention = await this._context.interventions.FindAsync(id);
+
+        if (Intervention == null)
+        {
+            return NotFound();
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Intervention>>> GetInterventions()
+        String GetTimestamp(DateTime value)
         {
-            return await _context.interventions.ToListAsync();
+            return value.ToString("yyyyMMddHHmmssffff");
+        }
+        String timeStamp = GetTimestamp(DateTime.Now);
+
+
+        Intervention.Status = "InProgress";
+        Intervention.StartDate = timeStamp;
+
+        this._context.interventions.Update(Intervention);
+        await this._context.SaveChangesAsync();
+        return Intervention;
+    }
+
+    [HttpPut("{id}/Completed")]
+    public async Task<ActionResult<Intervention>> UpdateInterventionEndDate([FromRoute] int id)
+    {
+        var InterventionEnd = await this._context.interventions.FindAsync(id);
+
+        if (InterventionEnd == null)
+        {
+            return NotFound();
         }
 
-        // GET api/Interventions/id
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Intervention>> Get(int id)
+        String GetTimestamp(DateTime value)
         {
-            var intervention = await _context.interventions.FindAsync(id);
-            if (intervention == null) return NotFound();
-            return intervention;
+            return value.ToString("yyyyMMddHHmmssffff");
         }
+        String timeStamp = GetTimestamp(DateTime.Now);
 
-        // PUT api/intervention/id/status/status
-        [HttpPut("{id}/status/{status}")]
-        public async Task<ActionResult<Intervention>> Put(int id, string Status)
-        {
-            // grab intervention with id id
-            var intervention = await _context.interventions.FindAsync(id);
 
-            if (intervention == null)
-            {
-                return NotFound();
-            }
-            // change status of intervention
-            intervention.Status = Status;
-            _context.SaveChanges();
+        InterventionEnd.Status = "Completed";
+        InterventionEnd.EndDate = timeStamp;
 
-            return intervention;
-        }
-
-        // DELETE api/<InterventionsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        this._context.interventions.Update(InterventionEnd);
+        await this._context.SaveChangesAsync();
+        return InterventionEnd;
     }
 }

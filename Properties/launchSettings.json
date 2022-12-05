@@ -14,7 +14,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "api/Rocket_Elevators_Rest_API",
-      "applicationUrl": "https://localhost:7235;http://localhost:5214, https://localhost:5001",
+      "applicationUrl": "https://localhost:7235;http://localhost:5214;https://localhost:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

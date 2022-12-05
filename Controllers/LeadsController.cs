@@ -60,7 +60,7 @@ namespace Rocket_Elevators_Rest_API.Controllers
             {
                 return NotFound();
             }
-            return  Ok(lead);
+            return Ok(lead);
         }
     }
 }
